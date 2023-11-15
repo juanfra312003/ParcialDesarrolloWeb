@@ -1,0 +1,33 @@
+<body>
+<b> Equipos: </b>
+<ul>
+  <li *ngFor="let equipoModel of equipos">
+    {{equipoModel.nombre}} - {{equipoModel.ciudad}} - {{equipoModel.copasInternacionales}}
+
+  </li>
+</ul>
+
+<b> Jugadores: </b>
+<ul>
+  <li *ngFor="let jugadorModel of jugadores">
+    {{jugadorModel.nombre}} - {{jugadorModel.apellidos}} - {{jugadorModel.numero}}
+
+  </li>
+</ul>
+
+<br>
+
+<b> Formulario Ingresar: </b>
+<form #formularioIngresar="ngForm" (ngSubmit)="onSubmit()">
+  <label>Nombre: </label>
+  <input type="text" name="nombre" [(ngModel)]="equipoCrear.nombre" required>
+  <br>
+  <label>Ciudad: </label>
+  <input type="text" name="ciudad" [(ngModel)]="equipoCrear.ciudad" required>
+  <br>
+  <label>Copas Internacionales: </label>
+  <input type="number" name="copasInternacionales" [(ngModel)]="equipoCrear.copasInternacionales" required>
+  <br>
+  <button type="submit">Ingresar</button>
+</form>
+</body>
